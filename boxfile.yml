@@ -31,11 +31,15 @@ run.config:
   cache_dirs:
     - vendor
 
+  extra_steps:
+    - cp nginx.conf /data/etc/nginx/nginx.conf
+    
   # Build Triggers - Changes to these files automatically
   # trigger a new build the next time a build is required.
   build_triggers:
     - composer.json
     - package.json
+    - nginx.conf
 
   extra_packages:
     - git
